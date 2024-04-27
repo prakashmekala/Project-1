@@ -1,3 +1,38 @@
 _schema-version: "3.2"
 ID: Project1
 version: 0.0.2
+modules:
+- name: project1-approuter
+  type: approuter.nodejs
+  path: project1-approuter
+  requires:
+  - name: Project1_html_repo_runtime
+  - name: uaa_Project1
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: Project1_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: Project1_html_repo_host
+    parameters:
+      content-target: true
+resources:
+- name: Project1_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: uaa_Project1
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: Project1-xsuaa-service
+    service-plan: application
+- name: Project1_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
