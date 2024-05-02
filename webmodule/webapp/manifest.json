@@ -14,6 +14,15 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.13.2",
       "toolsId": "d28a38f4-9cdf-4117-9acf-38ec3e1c957d"
+    },
+    "dataSources": {
+      "mainservice": {
+        "uri": "/v2/catalog/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
     }
   },
   "sap.ui": {
@@ -52,6 +61,10 @@
       "cozy": true
     },
     "models": {
+      "":{
+        "dataSource": "mainservice",
+        "settings": {}
+      },
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {

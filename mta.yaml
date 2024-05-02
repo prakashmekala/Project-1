@@ -60,7 +60,7 @@ resources:
     service: html5-apps-repo
     service-plan: app-host
 - name: Project1-destination-service
-  type: org.cloudfoundry.managed-service
+  type: org.cloudfoundry.existing-service
   parameters:
     config:
       HTML5Runtime_enabled: false
@@ -75,7 +75,7 @@ resources:
           existing_destinations_policy: update
       version: 1.0.0
     service: destination
-    service-name: Project1-destination-service
+    service-name: Gen-Destination
     service-plan: lite
 parameters:
   deploy_mode: html5-repo

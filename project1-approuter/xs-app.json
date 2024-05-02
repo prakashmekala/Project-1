@@ -1,5 +1,12 @@
 {
   "authenticationMethod": "none",
-  "routes": [],
+  "routes": [
+    {
+      "source": "^/v2/catalog/(.*)$",
+      "target": "/V2/OData/OData.svc/$1",
+      "authenticationType": "none",
+      "destination": "North_windV2"
+    }
+  ],
   "welcomeFile": "/webmodule"
 }
