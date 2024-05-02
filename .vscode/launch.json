@@ -55,6 +55,46 @@
         "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Project1/webmodule\"}"
       }
+    },
+    {
+      "name": "Run Project1-webmodule",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/project1-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/webmodule/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/webmodule",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"dist\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/Project1/webmodule\"}"
+      },
+      "envFile": "${workspaceFolder}/webmodule/.env",
+      "preLaunchTask": "Build Project1"
+    },
+    {
+      "name": "Run Project1 local",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/project1-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/webmodule/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/webmodule",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/Project1/webmodule\"}"
+      },
+      "envFile": "${workspaceFolder}/webmodule/.env",
+      "preLaunchTask": "Build Project1"
     }
   ]
 }

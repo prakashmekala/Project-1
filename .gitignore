@@ -4,3 +4,5 @@
 
 # auto generated wildcard
 .env
+# auto generated wildcard
+webmodule/.env

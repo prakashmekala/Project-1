@@ -14,7 +14,7 @@ sap.ui.define([
                     url: URL,
                     type: "GET",
                     success: function (oData,response) {
-                        console.log("got the data")
+                        console.log("got the data from ajax")
     				},
                     error: function (error) {
                         sap.m.MessageBox.error(JSON.parse(error.responseText).message, {
@@ -30,6 +30,7 @@ sap.ui.define([
                     success: function(oData, response){
                         sModel.setData(oData.results);
                         that.getView().setModel(sModel,"Products");
+                        console.log("got the data from the model read")
                         // that.getView().getModel("StatementList").refresh();
 
                         // let savedVar = JSON.parse(localStorage.getItem("filterVariant"));

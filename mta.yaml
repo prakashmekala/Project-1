@@ -60,7 +60,7 @@ resources:
     service: html5-apps-repo
     service-plan: app-host
 - name: Project1-destination-service
-  type: org.cloudfoundry.existing-service
+  type: org.cloudfoundry.managed-service
   parameters:
     config:
       HTML5Runtime_enabled: false
